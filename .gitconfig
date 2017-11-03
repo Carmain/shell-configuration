@@ -1,0 +1,8 @@
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    tree = log --graph --oneline --all
+    amend = commit --amend
+    cached = diff --cached
+
