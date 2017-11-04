@@ -6,6 +6,14 @@ function display {
     printf "\033[34m\033[1m - $1 \033[0m \n"
 }
 
+display "Installing oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+printf "\n"
+
+display "Change the default shell for zsh"
+chsh -s /bin/zsh
+printf "\n"
+
 display "Moving the git configuration"
 cp .gitconfig ~/.gitconfig
 
@@ -18,12 +26,13 @@ cp .nanorc ~/.nanorc
 display "Moving the vim configuration"
 cp .vimrc ~/.vimrc
 
-display "Install Pathogen"
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+printf "\n"
 
-display "Install all vim modules"
-cd ~/.vim/bundle  # go to directory
+display "Installing all vim modules"
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim  # Installing Pathogen
+cd ~/.vim/bundle
 
 # install modules
 git clone https://github.com/scrooloose/nerdtree # The Nerd Tree

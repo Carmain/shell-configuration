@@ -4,9 +4,9 @@ A Simple shell configuration for macOS & Linux
 ## Prerequisites
  * Unix-like operating system (macOS or Linux)
  * [Zsh](http://www.zsh.org) should be installed. If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
- * `curl` or `wget` should be installed
  * `git` should be installed
  * `vim` should be installed
+ * `curl` should be installed
 
 
 ## How to install the configuration ?

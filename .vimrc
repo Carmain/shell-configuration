@@ -1,11 +1,9 @@
-" @author Martin Billard 
-" https://github.com/Carmain/shell-configuration
-
 execute pathogen#infect()
 
 
 " Basic configuration
-syntax enable
+
+syntax on
 set t_Co=256
 
 set number
@@ -27,7 +25,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Themes
 " hybrid configuration
-let g:hybrid_user_Xressources = 1 
+let g:hybrid_user_Xressources = 1
 set background=dark
 
 " solarized configuration (comment the hybrid configuration if you want to use it)
@@ -47,4 +45,4 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 " Mapping
-map <C-n> :NERDTreeToggle<CR> 
+map <C-n> :NERDTreeToggle<CR>
