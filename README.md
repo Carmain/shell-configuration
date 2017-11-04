@@ -1,29 +1,29 @@
 # shell-configuration
-A Simple Vim, ZSH &amp; Tmux configuration
+A Simple shell configuration for macOS & Linux
 
-## Requirements
+## Prerequisites
+ * Unix-like operating system (macOS or Linux)
+ * [Zsh](http://www.zsh.org) should be installed. If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
+ * `curl` or `wget` should be installed
+ * `git` should be installed
+ * `vim` should be installed
 
-Please, make sure that you already have on your machine the following apps :
- * Git
- * Vim
 
 ## How to install the configuration ?
 
-### Download the sources
+### Download & install the sources
  * Clone the repo
- * Execute the following command : `bash configuration.sh`
+ * Execute the following command : `bash install.sh`
 
 ### Configure your git
-
 ```
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 ```
 
-## Shortcuts
+## Shortcuts already inclued
 
 ### Git
-
 *Start the command with `git ...` (example : `git st`)*
 
 | Original command            | Shortcut |
