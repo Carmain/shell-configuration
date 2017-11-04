@@ -15,6 +15,10 @@ A Simple shell configuration for macOS & Linux
  * Clone the repo
  * Execute the following command : `bash install.sh`
 
+### Refresh the configuration
+ * In a shell : `rm .zcompdump && antigen reset`
+ * Close all the shells instances and repoen a new one
+
 ### Configure your git
 ```
 $ git config --global user.name "John Doe"

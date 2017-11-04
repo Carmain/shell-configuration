@@ -10,6 +10,10 @@ display "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 printf "\n"
 
+display "Installing antigen"
+curl -L git.io/antigen > $HOME/antigen.zsh
+printf "\n"
+
 display "Change the default shell for zsh"
 chsh -s /bin/zsh
 printf "\n"
