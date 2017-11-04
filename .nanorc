@@ -10,3 +10,19 @@ include "/usr/share/nano/ruby.nanorc"    # Ruby
 include "/usr/share/nano/java.nanorc"    # Java
 include "/usr/share/nano/asm.nanorc"     # Assembler
 include "/usr/share/nano/sh.nanorc"      # Shell scripts
+
+# Git syntax coloration
+syntax "gitcommit" "COMMIT_EDITMSG$"
+color white "#.*"
+color green "#.(modified|deleted).*"
+color yellow start="# Changes.*" end="# Changed.*"
+color cyan start="# Untracked.*" end="diff"
+color cyan start="# Untracked.*" end="$$"
+color brightred "^deleted file mode .*"
+color brightgreen "^\+.*"
+color brightred "^-.*"
+color brightyellow "^(diff|index|---|\+\+\+).*"
+color brightmagenta "@@.*@@"
+color white "# (Change[ds]|Untracked) .*"
+color white "#.*\(use .*"
+color white "^#"
