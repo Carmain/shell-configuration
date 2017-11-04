@@ -1,8 +1,11 @@
 [alias]
+    a = add
+    all = add .
+    c = commit
+    amend = commit --amend
+    d = diff
+    cached = diff --cached
     st = status
     co = checkout
     br = branch
     tree = log --graph --oneline --all
-    amend = commit --amend
-    cached = diff --cached
-
