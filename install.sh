@@ -6,20 +6,23 @@ function display {
     printf "\033[34m\033[1m - $1 \033[0m \n"
 }
 
-display "Moving .vimrc"
-cp .vimrc ~/.vimrc
-
-display "Moving .gitconfig"
+display "Moving the git configuration"
 cp .gitconfig ~/.gitconfig
 
-display "Moving .zshrc"
+display "Moving the ZSH configuration"
 cp .zshrc ~/.zshrc
 
-display "Installing Pathogen"
+display "Moving the nano configuration"
+cp .nanorc ~/.nanorc
+
+display "Moving the vim configuration"
+cp .vimrc ~/.vimrc
+
+display "Install Pathogen"
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-display "Installing vim modules"
+display "Install all vim modules"
 cd ~/.vim/bundle  # go to directory
 
 # install modules
