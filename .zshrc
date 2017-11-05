@@ -20,14 +20,14 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 
-alias ll="ls -l --color=auto"
 alias ls="ls --color=auto"
+alias ll="ls -l --color=auto"
 alias lahl="ls -ahl --color=auto"
 alias l.="ls -d .* --color=auto" # Show hidden fields
 
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
 
 alias h="history"
 
