@@ -1,8 +1,12 @@
+# ---------- Basic configuration ----------
+
 set autoindent
 set nowrap
 set matchbrackets "(<[{)>]}"
 set mouse
 set tabsize 4
+
+# ---------- Common syntax coloration ----------
 
 include "/usr/share/nano/nanorc.nanorc"  # Nanorc files
 include "/usr/share/nano/c.nanorc"       # C/C++
@@ -17,8 +21,10 @@ include "/usr/share/nano/java.nanorc"    # Java
 include "/usr/share/nano/asm.nanorc"     # Assembler
 include "/usr/share/nano/sh.nanorc"      # Shell scripts
 
-# Git syntax coloration
+# ---------- Git syntax coloration ----------
+
 syntax "gitcommit" "COMMIT_EDITMSG$"
+
 color white "#.*"
 color green "#.(modified|deleted).*"
 color yellow start="# Changes.*" end="# Changed.*"

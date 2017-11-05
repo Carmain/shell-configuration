@@ -1,13 +1,15 @@
 execute pathogen#infect()
 
 
-" Basic configuration
+"---------- Basic configuration ----------
 
 syntax on
 
 set t_Co=256
 set number
 set mouse=a
+
+set backspace=indent,eol,start  " Make backspace behave like every editors
 
 set tabstop=4     " Tell vim how many columns a tab counts for
 set expandtab     " Htting tab in insert mode will procude the appropriate number of space
@@ -27,7 +29,7 @@ set listchars=tab:▸\ ,eol:¬
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
-" Themes
+" ---------- Themes configuration ----------
 
 " hybrid configuration
 let g:hybrid_user_Xressources = 1
@@ -43,11 +45,14 @@ set background=dark
 colorscheme hybrid
 
 
+" ---------- Package configurations ----------
+
 " NERDTree CONFIGURATION
 " Open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
-" Mapping
+" ---------- Mapping ----------
+
 map <C-n> :NERDTreeToggle<CR>
