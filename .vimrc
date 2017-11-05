@@ -4,8 +4,8 @@ execute pathogen#infect()
 " Basic configuration
 
 syntax on
-set t_Co=256
 
+set t_Co=256
 set number
 set mouse=a
 
@@ -19,11 +19,16 @@ set ignorecase
 set showmode
 set ruler
 
+" give us nice EOL (end of line) characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
 " Remember the cursor position when we reopen the file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
 " Themes
+
 " hybrid configuration
 let g:hybrid_user_Xressources = 1
 set background=dark

@@ -1,3 +1,9 @@
+set autoindent
+set nowrap
+set matchbrackets "(<[{)>]}"
+set mouse
+set tabsize 4
+
 include "/usr/share/nano/nanorc.nanorc"  # Nanorc files
 include "/usr/share/nano/c.nanorc"       # C/C++
 include "/usr/share/nano/html.nanorc"    # HTML
