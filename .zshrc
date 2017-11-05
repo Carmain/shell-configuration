@@ -5,6 +5,8 @@ antigen use oh-my-zsh # Load the oh-my-zsh's library
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle django
 antigen bundle web-search
+antigen bundle pip
+antigen bundle npm
 
 antigen bundle zsh-users/zsh-syntax-highlighting  # Syntax highlighting bundle
 antigen bundle zsh-users/zsh-autosuggestions      # Fish-like auto suggestions
