@@ -20,14 +20,20 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 
-alias ls="ls --color=auto"
-alias ll="ls -l --color=auto"
-alias lahl="ls -ahl --color=auto"
-alias l.="ls -d .* --color=auto" # Show hidden fields
+color_param="-G"  # OSX param for --color=auto
 
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
-alias fgrep="fgrep --color=auto"
+if [[ "$(uname)" == "Linux" ]]; then
+  color_param="--color=auto"
+fi
+
+alias ls="ls $color_param"
+alias ll="ls -l $color_param"
+alias lahl="ls -ahl $color_param"
+alias l.="ls -d .* $color_param"
+
+alias grep="grep $color_param"
+alias egrep="egrep $color_param"
+alias fgrep="fgrep $color_param"
 
 alias h="history"
 
