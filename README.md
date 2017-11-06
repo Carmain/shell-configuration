@@ -19,12 +19,11 @@ A Simple shell configuration for macOS & Linux.
 $ git clone https://github.com/Carmain/shell-configuration.git
 $ cd shell-configuration
 $ bash install.sh
-$ antigen reset
 ```
 
 After that, close all the shells instances and repoen a new one
 
-If nothing changed, try to delete the `.zcompdump` file (in ~) and reload the shell.
+If nothing changed, try the command `antigen reset` & reload the shell again. If the problem isn't fixed, delete the `.zcompdump` file (in `~`) and reload again.  
 
 ### Configure your git
 ```bash
