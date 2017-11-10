@@ -7,6 +7,7 @@ antigen bundle django
 antigen bundle web-search
 antigen bundle pip
 antigen bundle npm
+antigen bundle colored-man-pages
 
 antigen bundle zsh-users/zsh-syntax-highlighting  # Syntax highlighting bundle
 antigen bundle zsh-users/zsh-autosuggestions      # Fish-like auto suggestions
