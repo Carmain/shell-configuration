@@ -20,7 +20,7 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 
-color_param="-G"  # OSX param for --color=auto
+color_param="-G"  # OSX and FreeBSD param for --color=auto
 
 if [[ "$(uname)" == "Linux" ]]; then
   color_param="--color=auto"
