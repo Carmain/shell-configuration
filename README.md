@@ -21,7 +21,7 @@ $ cd shell-configuration
 $ bash install.sh
 ```
 
-After that, close all the shells instances and repoen a new one
+After that, close all the shells instances and reopen a new one
 
 If nothing changed, try the command `antigen reset` & reload the shell again. If the problem isn't fixed, delete the `.zcompdump` file (in `~`) and reload again.  
 
