@@ -1,6 +1,7 @@
 [alias]
     a = add
     all = add .
+    out-all = checkout -- .
     c = commit
     amend = commit --amend
     d = diff
