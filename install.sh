@@ -1,34 +1,33 @@
 #!/bin/bash
 
-
 function display {
   printf "\033[34m\033[1m - $1 \033[0m \n"
 }
 
-display "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-printf "\n"
+BACKUP_PATH="$HOME/dotfiles-backup"
 
-display "Installing antigen"
-curl -L git.io/antigen > $HOME/antigen.zsh
-printf "\n"
 
-display "Change the default shell for zsh"
-chsh -s /bin/zsh
-printf "\n"
-
-# Automation of the gitconfig build
-display "Git settings"
+display "Backup your configuration"
 while true; do
-  read -p "Do you wish to install the git configuration ? It will erase your initial .gitconfig file [y/n] " yn
+  read -p "Do you want to do a backup of your initial dotfiles ? [y/n] " yn
   case $yn in
     [Yy]* )
-      cp .gitconfig ~/.gitconfig
+      if [ ! -d $BACKUP_PATH ]; then
+        mkdir $BACKUP_PATH
+      fi
 
-      read -p "Please give your username : " username
-      read -p "Please give your email : " email
-      git config --global user.name $username
-      git config --global user.email $email
+      # Even if the script doesn't need to change the bashrc content, it may
+      # be more easier for the user to find his file if he need to copy some
+      # stuff inside the .zshrc later.
+      dotfiles=( gitconfig vimrc nanorc zshrc bashrc )
+
+      for i in "${dotfiles[@]}"
+      do
+        if [ -f ~/.$i ]; then
+          mv ~/.$i $BACKUP_PATH/$i
+          printf " - .$i backuped in $BACKUP_PATH\n"
+        fi
+      done
 
       break;;
 
@@ -42,18 +41,43 @@ done
 
 printf "\n"
 
-display "Moving the ZSH configuration"
+display "oh-my-zsh installation"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+printf "\n"
+
+
+display "Antigen installation"
+curl -L git.io/antigen > $HOME/antigen.zsh
+printf "\n"
+
+
+display "Changes the default shell for zsh"
+chsh -s /bin/zsh
+printf "\n"
+
+
+# Automation of the gitconfig build
+display "Gitconfig configuration"
+cp .gitconfig ~/.gitconfig
+read -p "Please give your username : " username
+read -p "Please give your email : " email
+git config --global user.name $username
+git config --global user.email $email
+printf "\n"
+
+display "ZSH configuration"
 cp .zshrc ~/.zshrc
 
-display "Moving the nano configuration"
+display "Nano configuration"
 cp .nanorc ~/.nanorc
 
-display "Moving the vim configuration"
+display "Vim configuration"
 cp .vimrc ~/.vimrc
 
 printf "\n"
 
-display "Installing all vim modules"
+
+display "Vim modules installation"
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim  # Install Pathogen
