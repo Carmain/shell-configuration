@@ -1,25 +1,25 @@
 execute pathogen#infect()
 
 
-"---------- Basic configuration ----------
+" ---------- Basic configuration ----------
 
 syntax on
 
 set t_Co=256
 set number
 set mouse=a
-
+set clipboard=unnamed  " Use the OS clipboard by default
 set backspace=indent,eol,start  " Make backspace behave like every editors
 
-set tabstop=4     " Tell vim how many columns a tab counts for
-set expandtab     " Htting tab in insert mode will procude the appropriate number of space
+set cursorline  " Highlight current line
+set tabstop=4  " Tell vim how many columns a tab counts for
+set expandtab  " Htting tab in insert mode will procude the appropriate number of space
 set shiftwidth=4  " Control how many columns text is indented with the reindent operations
-set smartindent   " Smart indent
+set smartindent  " Smart indent
+set ignorecase  " Ignore case of searches
+set showmode  " Show the filename in the window titlebar
+set ruler  " Show the cursor position
 set autoindent
-
-set ignorecase
-set showmode
-set ruler
 
 " give us nice EOL (end of line) characters
 set list
