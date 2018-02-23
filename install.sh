@@ -53,9 +53,11 @@ curl -L git.io/antigen > $HOME/antigen.zsh
 printf "\n"
 
 
-display "Changes the default shell for zsh"
-chsh -s /bin/zsh
-printf "\n"
+if [ $SHELL != "/bin/zsh" ]; then
+  display "Changes the default shell for zsh"
+  chsh -s /bin/zsh
+  printf "\n"
+fi
 
 
 # Automation of the gitconfig build
