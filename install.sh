@@ -8,6 +8,7 @@ BACKUP_PATH="$HOME/dotfiles-backup"
 
 
 display "Backup your configuration"
+
 while true; do
   read -p "Do you want to do a backup of your initial dotfiles ? [y/n] " yn
   case $yn in
@@ -41,6 +42,7 @@ done
 
 printf "\n"
 
+
 display "oh-my-zsh installation"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 printf "\n"
@@ -58,11 +60,30 @@ printf "\n"
 
 # Automation of the gitconfig build
 display "Gitconfig configuration"
+
 cp .gitconfig ~/.gitconfig
 read -p "Please give your username : " username
 read -p "Please give your email : " email
 git config --global user.name $username
 git config --global user.email $email
+printf "\n"
+
+printf "Please select your commit editor: \n"
+options=("VIM" "Nano" "Leave by default")
+select opt in "${options[@]}"
+do
+  case $opt in
+    "VIM")
+      git config --global core.editor "vim"
+      break;;
+    "Nano")
+      git config --global core.editor "nano"
+      break;;
+    "Leave by default")
+      break;;
+    *) echo invalid option;;
+  esac
+done
 printf "\n"
 
 display "ZSH configuration"
