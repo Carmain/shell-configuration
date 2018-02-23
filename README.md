@@ -68,6 +68,7 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 |-----------------------------|----------|
 | add                         | a        |
 | add .                       | all      |
+| checkout -- .               | out-all  |
 | commit                      | c        |
 | commit --amend              | amend    |
 | diff                        | d        |
