@@ -10,3 +10,5 @@
     co = checkout
     br = branch
     tree = log --graph --oneline --all
+    tag-date = for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags
+    impact = diff --stat --color

@@ -71,16 +71,22 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 
 _Start the command with `git ...` or `g ...` (example : `git st`)_
 
-| Original command            | Shortcut |
-| --------------------------- | -------- |
-| add                         | a        |
-| add .                       | all      |
-| checkout -- .               | out-all  |
-| commit                      | c        |
-| commit --amend              | amend    |
-| diff                        | d        |
-| diff --cached               | cached   |
-| status                      | st       |
-| checkout                    | co       |
-| branch                      | br       |
-| log --graph --oneline --all | tree     |
+| Original command                                                                              | Shortcut |
+| --------------------------------------------------------------------------------------------- | -------- |
+| add                                                                                           | a        |
+| add .                                                                                         | all      |
+| checkout -- .                                                                                 | out-all  |
+| commit                                                                                        | c        |
+| commit --amend                                                                                | amend    |
+| diff                                                                                          | d        |
+| diff --cached                                                                                 | cached   |
+| status                                                                                        | st       |
+| checkout                                                                                      | co       |
+| branch                                                                                        | br       |
+| log --graph --oneline --all                                                                   | tree     |
+| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags | tag-date |
+| diff --stat --color                                                                           | impact   |
+
+Note :
+
+- The command `git impact` can be used with a branch name as argument. For example : `git impact master`
