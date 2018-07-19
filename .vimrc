@@ -1,27 +1,47 @@
 execute pathogen#infect()
 
 
-" ---------- Basic configuration ----------
+" ---------- General configuration ----------
 
-syntax on
+set nocompatible
+set history=400
 
-set t_Co=256
 set encoding=utf-8
 set fileencoding=utf-8
-set number
-set mouse=a
+
 set clipboard=unnamed  " Use the OS clipboard by default
 set backspace=indent,eol,start  " Make backspace behave like every editors
 
+set ignorecase  " Ignore case when we search something ...
+set smartcase  " ... Except if the research contains uppercase
+
+
+" ---------- Interface configuration ----------
+
+syntax on
+
+set number
+set numberwidth=1
 set cursorline  " Highlight current line
-set tabstop=4  " Tell vim how many columns a tab counts for
-set expandtab  " Htting tab in insert mode will procude the appropriate number of space
-set shiftwidth=4  " Control how many columns text is indented with the reindent operations
-set ignorecase  " Ignore case of searches
-set showmode  " Show the filename in the window titlebar
+set mouse=a
+set mousehide  " Hide the mouse when it's not used
 set ruler  " Show the cursor position
+
+set showmode  " Show the filename in the window titlebar
+
+
+" ---------- Coding configuration ----------
+
 set autoindent
 set smartindent
+
+set expandtab  " Htting tab in insert mode will procude the appropriate number of space
+set tabstop=4  " Tell vim how many columns a tab counts for
+set shiftwidth=4  " Control how many columns text is indented with the reindent operations
+
+set showmatch       " Montre le/la crochet/parenthèse/croche correspondante
+set matchtime=2     " pendant 2 dixièmes de secondes
+set matchpairs=(:),[:],{:},<:>
 
 " give us nice EOL (end of line) characters
 set list
@@ -33,18 +53,38 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " ---------- Themes configuration ----------
 
-" hybrid configuration
-let g:hybrid_user_Xressources = 1
-set background=dark
+function Solarized(background)
+    colorscheme solarized
+    let g:solarized_termcolors=256
+    let g:solarized_contrast="high"
+    let g:solarized_visibility="high"
 
-" solarized configuration (comment the hybrid configuration if you want to use it)
-" set background=dark  " (dark or light)
+    if a:background == "dark"
+      set background=dark
 
-" Availables colorscheme :
-"   - solarized (set background to dark or light)
-"   - monokai
-"   - hybrid
-colorscheme hybrid
+    else
+      set background=light
+    endif
+endfunction
+
+set t_Co=256
+
+let colors="hybrid"
+
+if colors == "hybrid"
+    colorscheme hybrid
+    let g:hybrid_user_Xressources = 1
+    set background=dark
+
+elseif colors == "solarized-dark"
+    call Solarized("dark")
+
+elseif colors == "solarized-light"
+    call Solarized("light")
+
+elseif colors == "monokai"
+    colorscheme monokai
+endif
 
 
 " ---------- Package configurations ----------
@@ -58,3 +98,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " ---------- Mapping ----------
 
 map <C-n> :NERDTreeToggle<CR>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
