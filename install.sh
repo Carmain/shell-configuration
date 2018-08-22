@@ -53,6 +53,11 @@ curl -L git.io/antigen > $HOME/antigen.zsh
 printf "\n"
 
 
+display "Vundle installation"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+printf "\n"
+
+
 if [ $SHELL != "/bin/zsh" ]; then
   display "Changes the default shell for zsh"
   chsh -s /bin/zsh
@@ -96,22 +101,4 @@ cp .nanorc ~/.nanorc
 
 display "Vim configuration"
 cp .vimrc ~/.vimrc
-
-printf "\n"
-
-
-display "Vim modules installation"
-
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim  # Install Pathogen
-cd ~/.vim/bundle
-
-# install modules
-git clone https://github.com/scrooloose/nerdtree  # The Nerd Tree
-git clone https://github.com/kien/ctrlp.vim       # CTRLP.VIM
-
-# install themes
-git clone https://github.com/altercation/vim-colors-solarized  # Solarized
-git clone https://github.com/w0ng/vim-hybrid                   # Hybrid
-git clone https://github.com/jonathanfilip/vim-lucius          # Lucius
-git clone https://github.com/sickill/vim-monokai               # Monokai
+vim +PluginInstall +qall

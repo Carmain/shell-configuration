@@ -1,9 +1,16 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 
 " ---------- General configuration ----------
 
-set nocompatible
 set history=400
 
 set encoding=utf-8
@@ -49,6 +56,22 @@ set listchars=tab:▸\ ,eol:¬
 
 " Remember the cursor position when we reopen the file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+
+" ---------- Vundle plugins ----------
+
+" Modules
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+
+" Themes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'sickill/vim-monokai'
+
+call vundle#end()
+filetype plugin indent on
 
 
 " ---------- Themes configuration ----------
