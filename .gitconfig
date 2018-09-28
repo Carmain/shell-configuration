@@ -2,13 +2,15 @@
     a = add
     all = add .
     out-all = checkout -- .
-    c = commit
+    ci = commit
     amend = commit --amend
     d = diff
     cached = diff --cached
-    st = status
-    co = checkout
-    br = branch
-    tree = log --graph --oneline --all
-    tag-date = for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags
     impact = diff --stat --color
+    st = status
+    ck = checkout
+    br = branch
+    lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    lgd = log -p
+    tree = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all
+    tag-date = for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags

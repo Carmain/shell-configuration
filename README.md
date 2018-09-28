@@ -11,7 +11,7 @@ A Simple shell configuration for macOS & Linux.
 ## Prerequisites
 
 - Unix-like operating system (macOS or Linux)
-- [Zsh](http://www.zsh.org) should be installed. If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
+- [ZSH](http://www.zsh.org) should be installed. If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 - `git`, `vim` and `curl` should be installed
 
 ## How to install the configuration ?
@@ -41,7 +41,7 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) (syntax highlighting bundle)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (fish-like auto suggestions)
-- [zsh-completions](https://github.com/zsh-users/zsh-completions) (extra zsh completions)
+- [zsh-completions](https://github.com/zsh-users/zsh-completions) (extra ZSH completions)
 
 ## Shortcuts & aliases already inclued
 
@@ -64,29 +64,51 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 | pip                    | pi    |
 | python3                | py3   |
 | pip3                   | pi3   |
-| git                    | g     |
-| git flow               | gf    |
 
-### Git
+### Specific git & git flow aliases
+
+| Git original command | Alias |
+| -------------------- | ----- |
+| git                  | g     |
+| git status           | gst   |
+| git diff             | gdi   |
+| git cached           | gch   |
+| git lg               | glg   |
+| git checkout develop | gcd   |
+| git checkout master  | gcm   |
+
+| Git flow original command | Alias |
+| ------------------------- | ----- |
+| git flow                  | gf    |
+| git flow feature start    | gffs  |
+| git flow feature publish  | gffp  |
+| git flow feature finish   | gfff  |
+| git flow release start    | gfrs  |
+| git flow release finish   | gfrf  |
+
+
+### Git aliases from the `.gitconfig`
 
 _Start the command with `git ...` or `g ...` (example : `git st`)_
 
-| Original command                                                                              | Shortcut |
-| --------------------------------------------------------------------------------------------- | -------- |
-| add                                                                                           | a        |
-| add .                                                                                         | all      |
-| checkout -- .                                                                                 | out-all  |
-| commit                                                                                        | c        |
-| commit --amend                                                                                | amend    |
-| diff                                                                                          | d        |
-| diff --cached                                                                                 | cached   |
-| status                                                                                        | st       |
-| checkout                                                                                      | co       |
-| branch                                                                                        | br       |
-| log --graph --oneline --all                                                                   | tree     |
-| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags | tag-date |
-| diff --stat --color                                                                           | impact   |
+| Original command                                                                                                  | Shortcut |
+| ----------------------------------------------------------------------------------------------------------------- | -------- |
+| add                                                                                                               | a        |
+| add .                                                                                                             | all      |
+| checkout -- .                                                                                                     | out-all  |
+| commit                                                                                                            | ci       |
+| commit --amend                                                                                                    | amend    |
+| diff                                                                                                              | d        |
+| diff --cached                                                                                                     | cached   |
+| diff --stat --color                                                                                               | impact   |
+| status                                                                                                            | st       |
+| checkout                                                                                                          | ck       |
+| branch                                                                                                            | br       |
+| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'               | lg       |
+| log -p                                                                                                            | lgd      |
+| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree     |
+| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date |
 
-Note :
+*Note :*
 
 - The command `git impact` can be used with a branch name as argument. For example : `git impact master`
