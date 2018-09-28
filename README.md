@@ -64,8 +64,28 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 | pip                    | pi    |
 | python3                | py3   |
 | pip3                   | pi3   |
-| git                    | g     |
-| git flow               | gf    |
+
+### Specific git & git flow aliases
+
+| Git original command | Alias |
+| -------------------- | ----- |
+| git                  | g     |
+| git status           | gst   |
+| git diff             | gdi   |
+| git cached           | gch   |
+| git lg               | glg   |
+| git checkout develop | gcd   |
+| git checkout master  | gcm   |
+
+| Git flow original command | Alias |
+| ------------------------- | ----- |
+| git flow                  | gf    |
+| git flow feature start    | gffs  |
+| git flow feature publish  | gffp  |
+| git flow feature finish   | gfff  |
+| git flow release start    | gfrs  |
+| git flow release finish   | gfrf  |
+
 
 ### Git aliases from the `.gitconfig`
 
