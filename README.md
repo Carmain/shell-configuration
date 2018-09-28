@@ -67,25 +67,27 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 | git                    | g     |
 | git flow               | gf    |
 
-### Git
+### Git aliases from the `.gitconfig`
 
 _Start the command with `git ...` or `g ...` (example : `git st`)_
 
-| Original command                                                                              | Shortcut |
-| --------------------------------------------------------------------------------------------- | -------- |
-| add                                                                                           | a        |
-| add .                                                                                         | all      |
-| checkout -- .                                                                                 | out-all  |
-| commit                                                                                        | c        |
-| commit --amend                                                                                | amend    |
-| diff                                                                                          | d        |
-| diff --cached                                                                                 | cached   |
-| status                                                                                        | st       |
-| checkout                                                                                      | co       |
-| branch                                                                                        | br       |
-| log --graph --oneline --all                                                                   | tree     |
-| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags | tag-date |
-| diff --stat --color                                                                           | impact   |
+| Original command                                                                                                  | Shortcut |
+| ----------------------------------------------------------------------------------------------------------------- | -------- |
+| add                                                                                                               | a        |
+| add .                                                                                                             | all      |
+| checkout -- .                                                                                                     | out-all  |
+| commit                                                                                                            | ci       |
+| commit --amend                                                                                                    | amend    |
+| diff                                                                                                              | d        |
+| diff --cached                                                                                                     | cached   |
+| diff --stat --color                                                                                               | impact   |
+| status                                                                                                            | st       |
+| checkout                                                                                                          | ck       |
+| branch                                                                                                            | br       |
+| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'               | lg       |
+| log -p                                                                                                            | lgd      |
+| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree     |
+| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date |
 
 Note :
 
