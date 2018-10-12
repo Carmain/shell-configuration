@@ -65,7 +65,7 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 | python3                | py3   |
 | pip3                   | pi3   |
 
-### Git commands with superpowers
+### git commands with superpowers
 
 #### `gckl`
 
@@ -99,7 +99,12 @@ Already up to date. # Or get all the modifications applied to your local branch 
 
 ### Specific git & git flow aliases
 
-_For some aliases like `brn` or `bnm`, see the next point_
+#### `git`
+
+**Rules :**
+
+- All the commands start with `g`
+- The commands have at least **three** letters and maximum **four**
 
 | Git original command | Alias |
 | -------------------- | ----- |
@@ -121,6 +126,15 @@ _For some aliases like `brn` or `bnm`, see the next point_
 | git checkout develop | gckd  |
 | git checkout master  | gckm  |
 
+_For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` file_
+
+#### `git flow`
+
+**Rules :**
+
+- All the commands start with `gf`
+- The commands always have **four** letters (the first letter of each words)
+
 | Git flow original command | Alias |
 | ------------------------- | ----- |
 | git flow                  | gf    |
@@ -132,7 +146,7 @@ _For some aliases like `brn` or `bnm`, see the next point_
 | git flow hotfix start     | gfhs  |
 | git flow hotfix finish    | gfhf  |
 
-### Git aliases from the `.gitconfig`
+### git aliases from the `.gitconfig`
 
 _Start the command with `git ...` or `g ...` (example : `git st`)_
 
