@@ -44,12 +44,22 @@ alias py3="python3"
 alias pi3="pip3"
 
 alias g="git"
+alias gad="git add"
+alias gall="git add ."
+alias gci="git commit"
+alias gcam="git commit --amend"
+alias gcim="git commit -m"
+alias gpu="git push"
 alias gst="git status"
 alias gdi="git diff"
 alias gch="git cached"
 alias glg="git lg"
-alias gcd="git checkout develop"
-alias gcm="git checkout master"
+alias gbr="git br"
+alias gbrm="git brm"
+alias gbnm="git bnm"
+alias gck="git checkout"
+alias gckd="git checkout develop"
+alias gckm="git checkout master"
 
 alias gf="git flow"
 alias gffs="git flow feature start"
@@ -57,3 +67,30 @@ alias gffp="git flow feature publish"
 alias gfff="git flow feature finish"
 alias gfrs="git flow release start"
 alias gfrf="git flow release finish"
+alias gfhs="git flow hotfix start"
+alias gfhf="git flow hotfix finish"
+
+# git checkout last
+# This function is used to return on the last branch visited
+function gckl() {
+  last_branch_visited=$(
+    git reflog |  \
+    grep -o "checkout: moving from .* to " | \
+    sed -e 's/checkout: moving from //' -e 's/ to $//' | \
+    head -1
+  )
+
+  git checkout $last_branch_visited
+}
+
+# This function is used to :
+#  - From a branch go back to develop
+#  - Pull develop
+#  - Return into the last branch visited
+#  - Merge develop into this branch
+function sync_with_dev() {
+  git checkout develop
+  git pull
+  gckl
+  git merge develop
+}

@@ -65,17 +65,75 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 | python3                | py3   |
 | pip3                   | pi3   |
 
+### git commands with superpowers
+
+#### `gckl`
+
+Return on the last `git` branch visited
+
+```bash
+$ git:(develop) git checkout feature/cool-stuffs
+$ git:(feature/cool-stuffs) gckl
+$ git:(develop) # Do your stuff here
+$ git:(develop) gckl
+$ git:(feature/cool-stuffs) # Go back to the last branch visited
+```
+
+#### `sync_with_dev`
+
+This function is used to :
+
+- From a `git` branch go back to develop
+- Pull develop
+- Return into the last branch visited
+- Merge develop into this branch
+
+```bash
+git:(feature/fake-branch) sync_with_dev
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+Already up to date. # Or get all the modifications applied to your local branch
+Switched to branch 'feature/fake-branch'
+Already up to date. # Or get all the modifications applied to your local branch from develop
+```
+
 ### Specific git & git flow aliases
+
+#### `git`
+
+**Rules :**
+
+- All the commands start with `g`
+- The commands have at least **three** letters and maximum **four**
 
 | Git original command | Alias |
 | -------------------- | ----- |
 | git                  | g     |
+| git add              | gad   |
+| git add .            | gall  |
+| git commit           | gci   |
+| git commit --amend   | gcam  |
+| git commit -m        | gcim  |
+| git push             | gpu   |
 | git status           | gst   |
 | git diff             | gdi   |
 | git cached           | gch   |
 | git lg               | glg   |
-| git checkout develop | gcd   |
-| git checkout master  | gcm   |
+| git br               | gbr   |
+| git brm              | gbrm  |
+| git bnm              | gbnm  |
+| git checkout         | gck   |
+| git checkout develop | gckd  |
+| git checkout master  | gckm  |
+
+_For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` file_
+
+#### `git flow`
+
+**Rules :**
+
+- All the commands start with `gf`
+- The commands always have **four** letters (the first letter of each words)
 
 | Git flow original command | Alias |
 | ------------------------- | ----- |
@@ -85,30 +143,37 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 | git flow feature finish   | gfff  |
 | git flow release start    | gfrs  |
 | git flow release finish   | gfrf  |
+| git flow hotfix start     | gfhs  |
+| git flow hotfix finish    | gfhf  |
 
-
-### Git aliases from the `.gitconfig`
+### git aliases from the `.gitconfig`
 
 _Start the command with `git ...` or `g ...` (example : `git st`)_
 
-| Original command                                                                                                  | Shortcut |
-| ----------------------------------------------------------------------------------------------------------------- | -------- |
-| add                                                                                                               | a        |
-| add .                                                                                                             | all      |
-| checkout -- .                                                                                                     | out-all  |
-| commit                                                                                                            | ci       |
-| commit --amend                                                                                                    | amend    |
-| diff                                                                                                              | d        |
-| diff --cached                                                                                                     | cached   |
-| diff --stat --color                                                                                               | impact   |
-| status                                                                                                            | st       |
-| checkout                                                                                                          | ck       |
-| branch                                                                                                            | br       |
-| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'               | lg       |
-| log -p                                                                                                            | lgd      |
-| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree     |
-| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date |
+| Original command                                                                                                  | Shortcut     |
+| ----------------------------------------------------------------------------------------------------------------- | ------------ |
+| add                                                                                                               | a            |
+| add .                                                                                                             | all          |
+| checkout -- .                                                                                                     | out-all      |
+| commit                                                                                                            | ci           |
+| commit --amend                                                                                                    | amend        |
+| reset HEAD~                                                                                                       | soft-reset   |
+| reset --hard HEAD~                                                                                                | hard-reset   |
+| diff                                                                                                              | d            |
+| diff --cached                                                                                                     | cached       |
+| diff --stat --color                                                                                               | impact       |
+| status                                                                                                            | st           |
+| checkout                                                                                                          | ck           |
+| branch                                                                                                            | br           |
+| branch -D                                                                                                         | brm          |
+| branch --no-merged                                                                                                | bnm          |
+| log -p -M --follow --stat --                                                                                      | file-history |
+| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'               | lg           |
+| log -p                                                                                                            | lgd          |
+| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree         |
+| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date     |
 
-*Note :*
+**Note :**
 
 - The command `git impact` can be used with a branch name as argument. For example : `git impact master`
+- The command `git file-history` must be used with a file as argument. For exame : `git file-history home.html`
