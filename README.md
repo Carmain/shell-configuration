@@ -99,15 +99,27 @@ Already up to date. # Or get all the modifications applied to your local branch 
 
 ### Specific git & git flow aliases
 
+_For some aliases like `brn` or `bnm`, see the next point_
+
 | Git original command | Alias |
 | -------------------- | ----- |
 | git                  | g     |
+| git add              | gad   |
+| git add .            | gall  |
+| git commit           | gci   |
+| git commit --amend   | gcam  |
+| git commit -m        | gcim  |
+| git push             | gpu   |
 | git status           | gst   |
 | git diff             | gdi   |
 | git cached           | gch   |
 | git lg               | glg   |
-| git checkout develop | gcd   |
-| git checkout master  | gcm   |
+| git br               | gbr   |
+| git brm              | gbrm  |
+| git bnm              | gbnm  |
+| git checkout         | gck   |
+| git checkout develop | gckd  |
+| git checkout master  | gckm  |
 
 | Git flow original command | Alias |
 | ------------------------- | ----- |
@@ -117,30 +129,37 @@ Already up to date. # Or get all the modifications applied to your local branch 
 | git flow feature finish   | gfff  |
 | git flow release start    | gfrs  |
 | git flow release finish   | gfrf  |
-
+| git flow hotfix start     | gfhs  |
+| git flow hotfix finish    | gfhf  |
 
 ### Git aliases from the `.gitconfig`
 
 _Start the command with `git ...` or `g ...` (example : `git st`)_
 
-| Original command                                                                                                  | Shortcut |
-| ----------------------------------------------------------------------------------------------------------------- | -------- |
-| add                                                                                                               | a        |
-| add .                                                                                                             | all      |
-| checkout -- .                                                                                                     | out-all  |
-| commit                                                                                                            | ci       |
-| commit --amend                                                                                                    | amend    |
-| diff                                                                                                              | d        |
-| diff --cached                                                                                                     | cached   |
-| diff --stat --color                                                                                               | impact   |
-| status                                                                                                            | st       |
-| checkout                                                                                                          | ck       |
-| branch                                                                                                            | br       |
-| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'               | lg       |
-| log -p                                                                                                            | lgd      |
-| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree     |
-| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date |
+| Original command                                                                                                  | Shortcut     |
+| ----------------------------------------------------------------------------------------------------------------- | ------------ |
+| add                                                                                                               | a            |
+| add .                                                                                                             | all          |
+| checkout -- .                                                                                                     | out-all      |
+| commit                                                                                                            | ci           |
+| commit --amend                                                                                                    | amend        |
+| reset HEAD~                                                                                                       | soft-reset   |
+| reset --hard HEAD~                                                                                                | hard-reset   |
+| diff                                                                                                              | d            |
+| diff --cached                                                                                                     | cached       |
+| diff --stat --color                                                                                               | impact       |
+| status                                                                                                            | st           |
+| checkout                                                                                                          | ck           |
+| branch                                                                                                            | br           |
+| branch -D                                                                                                         | brm          |
+| branch --no-merged                                                                                                | bnm          |
+| log -p -M --follow --stat --                                                                                      | file-history |
+| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'               | lg           |
+| log -p                                                                                                            | lgd          |
+| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree         |
+| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date     |
 
 *Note :*
 
-- The command `git impact` can be used with a branch name as argument. For example : `git impact master`
+- The commands `git impact` can be used with a branch name as argument. For example : `git impact master`
+- The commands `git file-history` must be used with a file as argument. For exame : `git file-history home.html`
