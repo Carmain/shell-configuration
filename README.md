@@ -173,7 +173,7 @@ _Start the command with `git ...` or `g ...` (example : `git st`)_
 | log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree         |
 | for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date     |
 
-*Note :*
+**Note :**
 
-- The commands `git impact` can be used with a branch name as argument. For example : `git impact master`
-- The commands `git file-history` must be used with a file as argument. For exame : `git file-history home.html`
+- The command `git impact` can be used with a branch name as argument. For example : `git impact master`
+- The command `git file-history` must be used with a file as argument. For exame : `git file-history home.html`
