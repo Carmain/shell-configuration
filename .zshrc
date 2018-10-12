@@ -57,3 +57,29 @@ alias gffp="git flow feature publish"
 alias gfff="git flow feature finish"
 alias gfrs="git flow release start"
 alias gfrf="git flow release finish"
+
+
+# git checkout last
+# This function is used to return on the last branch visited
+function gckl() {
+  last_branch_visited=$(
+    git reflog |  \
+    grep -o "checkout: moving from .* to " | \
+    sed -e 's/checkout: moving from //' -e 's/ to $//' | \
+    head -1
+  )
+
+  git checkout $last_branch_visited
+}
+
+# This function is used to :
+#  - From a branch go back to develop
+#  - Pull develop
+#  - Return into the last branch visited
+#  - Merge develop into this branch
+function sync_with_dev() {
+  git checkout develop
+  git pull
+  gckl
+  git merge develop
+}

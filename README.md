@@ -65,6 +65,38 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 | python3                | py3   |
 | pip3                   | pi3   |
 
+### Git commands with superpowers
+
+#### `gckl`
+
+Return on the last `git` branch visited
+
+```bash
+$ git:(develop) git checkout feature/cool-stuffs
+$ git:(feature/cool-stuffs) gckl
+$ git:(develop) # Do your stuff here
+$ git:(develop) gckl
+$ git:(feature/cool-stuffs) # Go back to the last branch visited
+```
+
+#### `sync_with_dev`
+
+This function is used to :
+
+- From a `git` branch go back to develop
+- Pull develop
+- Return into the last branch visited
+- Merge develop into this branch
+
+```bash
+git:(feature/fake-branch) sync_with_dev
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+Already up to date. # Or get all the modifications applied to your local branch
+Switched to branch 'feature/fake-branch'
+Already up to date. # Or get all the modifications applied to your local branch from develop
+```
+
 ### Specific git & git flow aliases
 
 | Git original command | Alias |
