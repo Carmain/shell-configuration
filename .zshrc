@@ -13,7 +13,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting  # Syntax highlighting bundle
 antigen bundle zsh-users/zsh-autosuggestions      # Fish-like auto suggestions
 antigen bundle zsh-users/zsh-completions          # Extra zsh completions
 
-antigen theme robbyrussell  # Load the theme
+antigen theme avit  # Load the theme
 antigen apply  # Tell antigen that you're done
 
 
