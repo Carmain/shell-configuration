@@ -1,12 +1,34 @@
 # shell-configuration
 
-A Simple shell configuration for macOS & Linux.
+A simple shell configuration compatible for macOS & Linux.
+
+<!-- TOC -->
+
+- [shell-configuration](#shell-configuration)
+  - [What's inside ?](#whats-inside)
+  - [Prerequisites](#prerequisites)
+  - [How to install the configuration ?](#how-to-install-the-configuration)
+    - [Download & install the sources](#download--install-the-sources)
+  - [Packages installed for `ZSH`](#packages-installed-for-zsh)
+    - [Bundles from the default repo (robbyrussell's oh-my-zsh)](#bundles-from-the-default-repo-robbyrussells-oh-my-zsh)
+    - [Awesome other bundles](#awesome-other-bundles)
+  - [Shortcuts & aliases already inclued](#shortcuts--aliases-already-inclued)
+    - [git commands with superpowers](#git-commands-with-superpowers)
+      - [`gckl`](#gckl)
+      - [`sync_with_dev`](#syncwithdev)
+    - [git aliases from `.gitconfig`](#git-aliases-from-gitconfig)
+    - [Aliases included in `.zshrc`](#aliases-included-in-zshrc)
+      - [git](#git)
+      - [git flow](#git-flow)
+      - [Miscellaneous](#miscellaneous)
+
+<!-- /TOC -->
 
 ## What's inside ?
 
 - Usefull aliases for common & git commands
 - A simple configuration for `vim` and `nano` with syntax coloration
-- A full configuration for ZSH including `oh-my-zsh` and some really nice packages
+- A sweet configuration for your teminal including `ZSH` with `oh-my-zsh` and some really nice packages (see below)
 
 ## Prerequisites
 
@@ -36,6 +58,7 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 - [web-search](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#web-search)
 - [pip](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#pip)
 - [npm](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#npm)
+- colored-man-pages
 
 ### Awesome other bundles
 
@@ -44,26 +67,6 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 - [zsh-completions](https://github.com/zsh-users/zsh-completions) (extra ZSH completions)
 
 ## Shortcuts & aliases already inclued
-
-### ZSH aliases
-
-| Original command       | Alias |
-| ---------------------- | ----- |
-| cd ../                 | ..    |
-| cd ../../              | ...   |
-| cd ../../../           | ....  |
-| ls --color=auto        | ls    |
-| ls -l --color=auto     | ll    |
-| ls -ahl --color=auto   | lahl  |
-| ls -d .\* --color=auto | l.    |
-| grep --color=auto      | grep  |
-| egrep --color=auto     | egrep |
-| fgrep --color=auto     | fgrep |
-| history                | h     |
-| python                 | py    |
-| pip                    | pi    |
-| python3                | py3   |
-| pip3                   | pi3   |
 
 ### git commands with superpowers
 
@@ -89,7 +92,7 @@ This function is used to :
 - Merge develop into this branch
 
 ```bash
-git:(feature/fake-branch) sync_with_dev
+$ git:(feature/fake-branch) sync_with_dev
 Switched to branch 'develop'
 Your branch is up to date with 'origin/develop'.
 Already up to date. # Or get all the modifications applied to your local branch
@@ -97,58 +100,9 @@ Switched to branch 'feature/fake-branch'
 Already up to date. # Or get all the modifications applied to your local branch from develop
 ```
 
-### Specific git & git flow aliases
+### git aliases from `.gitconfig`
 
-#### `git`
-
-**Rules :**
-
-- All the commands start with `g`
-- The commands have at least **three** letters and maximum **four**
-
-| Git original command | Alias |
-| -------------------- | ----- |
-| git                  | g     |
-| git add              | gad   |
-| git add .            | gall  |
-| git commit           | gci   |
-| git commit --amend   | gcam  |
-| git commit -m        | gcim  |
-| git push             | gpu   |
-| git status           | gst   |
-| git diff             | gdi   |
-| git cached           | gch   |
-| git lg               | glg   |
-| git br               | gbr   |
-| git brm              | gbrm  |
-| git bnm              | gbnm  |
-| git checkout         | gck   |
-| git checkout develop | gckd  |
-| git checkout master  | gckm  |
-
-_For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` file_
-
-#### `git flow`
-
-**Rules :**
-
-- All the commands start with `gf`
-- The commands always have **four** letters (the first letter of each words)
-
-| Git flow original command | Alias |
-| ------------------------- | ----- |
-| git flow                  | gf    |
-| git flow feature start    | gffs  |
-| git flow feature publish  | gffp  |
-| git flow feature finish   | gfff  |
-| git flow release start    | gfrs  |
-| git flow release finish   | gfrf  |
-| git flow hotfix start     | gfhs  |
-| git flow hotfix finish    | gfhf  |
-
-### git aliases from the `.gitconfig`
-
-_Start the command with `git ...` or `g ...` (example : `git st`)_
+_Start the command with `git` or `g` (example : `git st`)_
 
 | Original command                                                                                                  | Shortcut     |
 | ----------------------------------------------------------------------------------------------------------------- | ------------ |
@@ -177,3 +131,77 @@ _Start the command with `git ...` or `g ...` (example : `git st`)_
 
 - The command `git impact` can be used with a branch name as argument. For example : `git impact master`
 - The command `git file-history` must be used with a file as argument. For exame : `git file-history home.html`
+
+### Aliases included in `.zshrc`
+
+#### git
+
+**Rules :**
+
+- All the aliases start with `g`
+- The aliases have at least **three** letters and maximum **four**
+
+| Git original command | Alias |
+| -------------------- | ----- |
+| git                  | g     |
+| git add              | gad   |
+| git add .            | gall  |
+| git commit           | gci   |
+| git commit --amend   | gcam  |
+| git commit -m        | gcim  |
+| git push             | gpu   |
+| git status           | gst   |
+| git diff             | gdi   |
+| git cached           | gch   |
+| git lg               | glg   |
+| git br               | gbr   |
+| git brm              | gbrm  |
+| git bnm              | gbnm  |
+| git checkout         | gck   |
+| git checkout develop | gckd  |
+| git checkout master  | gckm  |
+
+_For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` file_
+
+#### git flow
+
+**Rules :**
+
+- All the aliases start with `gf`
+- The aliases always have **one** letter by word (the first of each words)
+
+| Git flow original command | Alias |
+| ------------------------- | ----- |
+| git flow                  | gf    |
+| git flow feature          | gff   |
+| git flow feature start    | gffs  |
+| git flow feature publish  | gffp  |
+| git flow feature finish   | gfff  |
+| git flow release          | gfr   |
+| git flow release start    | gfrs  |
+| git flow release publish  | gfrp  |
+| git flow release finish   | gfrf  |
+| git flow hotfix           | gfh   |
+| git flow hotfix start     | gfhs  |
+| git flow hotfix publish   | gfhp  |
+| git flow hotfix finish    | gfhf  |
+
+#### Miscellaneous
+
+| Original command       | Alias |
+| ---------------------- | ----- |
+| cd ../                 | ..    |
+| cd ../../              | ...   |
+| cd ../../../           | ....  |
+| ls --color=auto        | ls    |
+| ls -l --color=auto     | ll    |
+| ls -ahl --color=auto   | lahl  |
+| ls -d .\* --color=auto | l.    |
+| grep --color=auto      | grep  |
+| egrep --color=auto     | egrep |
+| fgrep --color=auto     | fgrep |
+| history                | h     |
+| python                 | py    |
+| pip                    | pi    |
+| python3                | py3   |
+| pip3                   | pi3   |

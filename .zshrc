@@ -13,7 +13,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting  # Syntax highlighting bundle
 antigen bundle zsh-users/zsh-autosuggestions      # Fish-like auto suggestions
 antigen bundle zsh-users/zsh-completions          # Extra zsh completions
 
-antigen theme robbyrussell  # Load the theme
+antigen theme avit  # Load the theme
 antigen apply  # Tell antigen that you're done
 
 
@@ -62,12 +62,17 @@ alias gckd="git checkout develop"
 alias gckm="git checkout master"
 
 alias gf="git flow"
+alias gff="git flow feature"
 alias gffs="git flow feature start"
 alias gffp="git flow feature publish"
 alias gfff="git flow feature finish"
+alias gfr="git flow release"
 alias gfrs="git flow release start"
+alias gfrp="git flow release publish"
 alias gfrf="git flow release finish"
+alias gfh="git flow hotfix"
 alias gfhs="git flow hotfix start"
+alias gfhp="git flow hotfix publish"
 alias gfhf="git flow hotfix finish"
 
 # git checkout last
