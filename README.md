@@ -133,17 +133,22 @@ _For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` fi
 **Rules :**
 
 - All the commands start with `gf`
-- The commands always have **four** letters (the first letter of each words)
+- The aliases always have **one** letter by word (the first of each words)
 
 | Git flow original command | Alias |
 | ------------------------- | ----- |
 | git flow                  | gf    |
+| git flow feature          | gff   |
 | git flow feature start    | gffs  |
 | git flow feature publish  | gffp  |
 | git flow feature finish   | gfff  |
+| git flow release          | gfr   |
 | git flow release start    | gfrs  |
+| git flow release publish  | gfrp  |
 | git flow release finish   | gfrf  |
+| git flow hotfix           | gfh   |
 | git flow hotfix start     | gfhs  |
+| git flow hotfix publish   | gfhp  |
 | git flow hotfix finish    | gfhf  |
 
 ### git aliases from the `.gitconfig`
