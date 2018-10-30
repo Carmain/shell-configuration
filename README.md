@@ -7,12 +7,14 @@ A simple shell configuration compatible for macOS & Linux.
 - [shell-configuration](#shell-configuration)
   - [What's inside ?](#whats-inside)
   - [Prerequisites](#prerequisites)
-  - [How to install the configuration ?](#how-to-install-the-configuration)
+  - [How to get it ?](#how-to-get-it)
     - [Download & install the sources](#download--install-the-sources)
   - [Packages installed for `ZSH`](#packages-installed-for-zsh)
+    - [The theme](#the-theme)
+    - [Meaning of the symbols displayed inside a git repositiory](#meaning-of-the-symbols-displayed-inside-a-git-repositiory)
     - [Bundles from the default repo (robbyrussell's oh-my-zsh)](#bundles-from-the-default-repo-robbyrussells-oh-my-zsh)
     - [Awesome other bundles](#awesome-other-bundles)
-  - [Shortcuts & aliases already inclued](#shortcuts--aliases-already-inclued)
+  - [Shortcuts & aliases included](#shortcuts--aliases-included)
     - [git commands with superpowers](#git-commands-with-superpowers)
       - [`gckl`](#gckl)
       - [`sync_with_dev`](#syncwithdev)
@@ -26,7 +28,7 @@ A simple shell configuration compatible for macOS & Linux.
 
 ## What's inside ?
 
-- Usefull aliases for common & git commands
+- Usefull aliases for common & git commands described and listed below
 - A simple configuration for `vim` and `nano` with syntax coloration
 - A sweet configuration for your teminal including `ZSH` with `oh-my-zsh` and some really nice packages (see below)
 
@@ -36,7 +38,7 @@ A simple shell configuration compatible for macOS & Linux.
 - [ZSH](http://www.zsh.org) should be installed. If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 - `git`, `vim` and `curl` should be installed
 
-## How to install the configuration ?
+## How to get it ?
 
 ### Download & install the sources
 
@@ -52,13 +54,32 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 
 ## Packages installed for `ZSH`
 
+### The theme
+
+The project use the `avit` theme already included in oh-my-zsh because of the purity of the prompt & the nice signaletic for git.
+
+- The prompt (▶) is grey by default and pass to red with elevated (root) privileges
+- A symbol is shown if the last command failed (⍉)
+- A compact view of the working directory wich show only the 3 last levels
+
+### Meaning of the symbols displayed inside a git repositiory
+
+| Symbol | Meaning                       |
+| ------ | ----------------------------- |
+| ✔      | Repository clean              |
+| ✗      | Dirty working repository      |
+| ✚      | Changes ready to be committed |
+| ⚑      | File(s) tracked modified      |
+| ✖      | File(s) tracked deleted       |
+| ▴      | File(s) Renamed               |
+| §      | Branch unmerged               |
+| ◒      | File(s) untracked             |
+
+
 ### Bundles from the default repo (robbyrussell's oh-my-zsh)
 
-- [django](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#django)
-- [web-search](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#web-search)
-- [pip](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#pip)
-- [npm](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#npm)
-- colored-man-pages
+- [web-search](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#web-search) (aliases for searching with Google, Wiki, Bing, YouTube and other popular services)
+- colored-man-pages (color the man pages for a better reading)
 
 ### Awesome other bundles
 
@@ -66,7 +87,7 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) (fish-like auto suggestions)
 - [zsh-completions](https://github.com/zsh-users/zsh-completions) (extra ZSH completions)
 
-## Shortcuts & aliases already inclued
+## Shortcuts & aliases included
 
 ### git commands with superpowers
 
@@ -122,7 +143,7 @@ _Start the command with `git` or `g` (example : `git st`)_
 | branch -D                                                                                                         | brm          |
 | branch --no-merged                                                                                                | bnm          |
 | log -p -M --follow --stat --                                                                                      | file-history |
-| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'               | lg           |
+| log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'             | lg           |
 | log -p                                                                                                            | lgd          |
 | log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree         |
 | for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date     |
