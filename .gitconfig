@@ -1,3 +1,27 @@
+[color]
+    ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = cyan
+
+[color "diff"]
+    meta = yellow
+    frag = cyan  # Lines infos
+    old = red  # Deletions
+    new = green  # Additions
+    whitespace = red reverse
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[help]
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1
+
 [alias]
     a = add
     all = add .
@@ -14,7 +38,7 @@
     br = branch
     brm = branch -D
     bnm = branch --no-merged
-    lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    lg = log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     lgd = log -p
     file-history = log -p -M --follow --stat --
     tree = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all
