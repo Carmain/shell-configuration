@@ -42,4 +42,5 @@
     lgd = log -p
     file-history = log -p -M --follow --stat --
     tree = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all
+    find-by-message = "!f() { git log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --grep=$1; }; f"
     tag-date = for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags

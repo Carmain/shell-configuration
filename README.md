@@ -43,9 +43,9 @@ A simple shell configuration compatible for macOS & Linux.
 ### Download & install the sources
 
 ```bash
-$ git clone https://github.com/Carmain/shell-configuration.git
-$ cd shell-configuration
-$ bash install.sh
+git clone https://github.com/Carmain/shell-configuration.git
+cd shell-configuration
+bash install.sh
 ```
 
 After that, close all the shells instances and reopen a new one
@@ -125,33 +125,35 @@ Already up to date. # Or get all the modifications applied to your local branch 
 
 _Start the command with `git` or `g` (example : `git st`)_
 
-| Original command                                                                                                  | Shortcut     |
-| ----------------------------------------------------------------------------------------------------------------- | ------------ |
-| add                                                                                                               | a            |
-| add .                                                                                                             | all          |
-| checkout -- .                                                                                                     | out-all      |
-| commit                                                                                                            | ci           |
-| commit --amend                                                                                                    | amend        |
-| reset HEAD~                                                                                                       | soft-reset   |
-| reset --hard HEAD~                                                                                                | hard-reset   |
-| diff                                                                                                              | d            |
-| diff --cached                                                                                                     | cached       |
-| diff --stat --color                                                                                               | impact       |
-| status                                                                                                            | st           |
-| checkout                                                                                                          | ck           |
-| branch                                                                                                            | br           |
-| branch -D                                                                                                         | brm          |
-| branch --no-merged                                                                                                | bnm          |
-| log -p -M --follow --stat --                                                                                      | file-history |
-| log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'             | lg           |
-| log -p                                                                                                            | lgd          |
-| log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all | tree         |
-| for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags                     | tag-date     |
+| Shortcut        | Explanation                                          |
+| --------------- | ---------------------------------------------------- |
+| a               | Shortcut for `add`                                   |
+| all             | Add all unstaged files                               |
+| out-all         | Rollback all unstaged modifications                  |
+| ci              | Shortcut for `commit`                                |
+| amend           | Shortcut for `commit --amend`                        |
+| soft-reset      | Rollback the last commit but keep the modifications  |
+| hard-reset      | Rollback the last commit and loss his modifications  |
+| d               | Shortcut for `diff`                                  |
+| cached          | Shortcut for `diff --cached`                         |
+| impact          | Show the impact (see the note below)                 |
+| st              | Shortcut for `status`                                |
+| ck              | Shortcut for `checkout`                              |
+| br              | Shortcut for `branch`                                |
+| brm             | Shortcut for `branch -D`                             |
+| bnm             | Shortcut for `branch --no-merged`                    |
+| file-history    | Display the history of the file (see the note below) |
+| lg              | A pretty `log`                                       |
+| lgd             | Shortcut for `log -p`                                |
+| tree            | A tree view of the git                               |
+| find-by-message | Filter the commits by message (see the note below)   |
+| tag-date        | Show the 10 last tag sorted by date                  |
 
 **Note :**
 
-- The command `git impact` can be used with a branch name as argument. For example : `git impact master`
-- The command `git file-history` must be used with a file as argument. For exame : `git file-history home.html`
+- The command `git impact` can be used like that to show the difference of the unstaged modifications with the last commit or with a branch name as argument to see the difference by files between the current branch and the other. For example : `git impact master`
+- The command `git file-history` must be used with a file as argument. For example : `git file-history home.html`
+- `find-by-message` must be used with a string as argument. For example : `git find-by-message Merge tag`. Be carefull, the command is case-sensitive !
 
 ### Aliases included in `.zshrc`
 
@@ -168,7 +170,7 @@ _Start the command with `git` or `g` (example : `git st`)_
 | git add              | gad   |
 | git add .            | gall  |
 | git commit           | gci   |
-| git commit --amend   | gcam  |
+| git amend            | gcam  |
 | git commit -m        | gcim  |
 | git push             | gpu   |
 | git status           | gst   |
