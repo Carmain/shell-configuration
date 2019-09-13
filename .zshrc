@@ -85,14 +85,30 @@ function gckl() {
   git checkout $last_branch_visited
 }
 
+function _update_develop_and_back() {
+  git checkout develop
+  git pull
+  gckl
+}
+
 # This function is used to :
 #  - From a branch go back to develop
 #  - Pull develop
 #  - Return into the last branch visited
 #  - Merge develop into this branch
-function sync_with_dev() {
-  git checkout develop
-  git pull
-  gckl
+sync_with_dev() {
+  _update_develop_and_back
   git merge develop
+}
+
+# This function is used to :
+#  - From a branch go back to develop
+#  - Pull develop
+#  - Return into the last branch visited
+#  - Merge this branch into develop
+#
+# Usefull when you work with merge request to clean your local git
+merge_feature() {
+  _update_develop_and_back
+  git flow feature finish
 }

@@ -33,6 +33,7 @@ set cursorline  " Highlight current line
 set mouse=a
 set mousehide  " Hide the mouse when it's not used
 set ruler  " Show the cursor position
+set belloff=all
 
 set showmode  " Show the filename in the window titlebar
 
