@@ -2,31 +2,7 @@
 
 A simple shell configuration compatible for macOS & Linux.
 
-<!-- TOC -->
-
-- [shell-configuration](#shell-configuration)
-  - [What's inside ?](#whats-inside)
-  - [Prerequisites](#prerequisites)
-  - [How to get it ?](#how-to-get-it)
-    - [Download & install the sources](#download--install-the-sources)
-  - [Packages installed for `ZSH`](#packages-installed-for-zsh)
-    - [The theme](#the-theme)
-    - [Meaning of the symbols displayed inside a git repositiory](#meaning-of-the-symbols-displayed-inside-a-git-repositiory)
-    - [Bundles from the default repo (robbyrussell's oh-my-zsh)](#bundles-from-the-default-repo-robbyrussells-oh-my-zsh)
-    - [Awesome other bundles](#awesome-other-bundles)
-  - [Shortcuts & aliases included](#shortcuts--aliases-included)
-    - [git commands with superpowers](#git-commands-with-superpowers)
-      - [`gckl`](#gckl)
-      - [`sync_with_dev`](#syncwithdev)
-    - [git aliases from `.gitconfig`](#git-aliases-from-gitconfig)
-    - [Aliases included in `.zshrc`](#aliases-included-in-zshrc)
-      - [git](#git)
-      - [git flow](#git-flow)
-      - [Miscellaneous](#miscellaneous)
-
-<!-- /TOC -->
-
-## What's inside ?
+## What's inside
 
 - Usefull aliases for common & git commands described and listed below
 - A simple configuration for `vim` and `nano` with syntax coloration
@@ -38,7 +14,7 @@ A simple shell configuration compatible for macOS & Linux.
 - [ZSH](http://www.zsh.org) should be installed. If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 - `git`, `vim` and `curl` should be installed
 
-## How to get it ?
+## How to get it
 
 ### Download & install the sources
 
@@ -74,7 +50,6 @@ The project use the `avit` theme already included in oh-my-zsh because of the pu
 | ▴      | File(s) Renamed               |
 | §      | Branch unmerged               |
 | ◒      | File(s) untracked             |
-
 
 ### Bundles from the default repo (robbyrussell's oh-my-zsh)
 
@@ -121,33 +96,57 @@ Switched to branch 'feature/fake-branch'
 Already up to date. # Or get all the modifications applied to your local branch from develop
 ```
 
+#### `merge_feature`
+
+This function is used to :
+
+- From a branch go back to develop
+- Pull develop
+- Return into the last branch visited
+- Merge this branch into develop
+
+Usefull when you work with merge request to clean your local git
+
+#### `grbx`
+
+Shortcut for `git rebase -i HEAD~<X>` where `<X>` is passed as argument
+
+```bash
+$ git:(feature/fake-branch) grbx 5
+```
+
 ### git aliases from `.gitconfig`
 
 _Start the command with `git` or `g` (example : `git st`)_
 
 | Shortcut        | Explanation                                          |
 | --------------- | ---------------------------------------------------- |
-| a               | Shortcut for `add`                                   |
+| a               | `add`                                                |
 | all             | Add all unstaged files                               |
-| out-all         | Rollback all unstaged modifications                  |
-| ci              | Shortcut for `commit`                                |
-| amend           | Shortcut for `commit --amend`                        |
-| soft-reset      | Rollback the last commit but keep the modifications  |
-| hard-reset      | Rollback the last commit and loss his modifications  |
-| d               | Shortcut for `diff`                                  |
-| cached          | Shortcut for `diff --cached`                         |
-| impact          | Show the impact (see the note below)                 |
-| st              | Shortcut for `status`                                |
-| ck              | Shortcut for `checkout`                              |
-| br              | Shortcut for `branch`                                |
-| brm             | Shortcut for `branch -D`                             |
-| bnm             | Shortcut for `branch --no-merged`                    |
+| amend           | `commit --amend`                                     |
+| bnm             | `branch --no-merged`                                 |
+| br              | `branch`                                             |
+| brm             | `branch -D`                                          |
+| cached          | `diff --cached`                                      |
+| ci              | `commit`                                             |
+| ck              | `checkout`                                           |
+| ckb             | `checkout -b`                                        |
+| d               | `diff`                                               |
 | file-history    | Display the history of the file (see the note below) |
-| lg              | A pretty `log`                                       |
-| lgd             | Shortcut for `log -p`                                |
-| tree            | A tree view of the git                               |
 | find-by-message | Filter the commits by message (see the note below)   |
+| hard-reset      | Rollback the last commit and loss his modifications  |
+| impact          | Show the impact (see the note below)                 |
+| lg              | A pretty `log`                                       |
+| lgd             | `log -p`                                             |
+| out-all         | Rollback all unstaged modifications                  |
+| soft-reset      | Rollback the last commit but keep the modifications  |
+| st              | `status`                                             |
 | tag-date        | Show the 10 last tag sorted by date                  |
+| tree            | A tree view of the git                               |
+| puf             | `push --force-with-lease`                            |
+| rb              | `rebase`                                             |
+| rbi             | `rebase -i`                                          |
+| rbm             | `rebase master`                                      |
 
 **Note :**
 
@@ -169,20 +168,20 @@ _Start the command with `git` or `g` (example : `git st`)_
 | git                  | g     |
 | git add              | gad   |
 | git add .            | gall  |
-| git commit           | gci   |
 | git amend            | gcam  |
-| git commit -m        | gcim  |
-| git push             | gpu   |
-| git status           | gst   |
-| git diff             | gdi   |
-| git cached           | gch   |
-| git lg               | glg   |
+| git bnm              | gbnm  |
 | git br               | gbr   |
 | git brm              | gbrm  |
-| git bnm              | gbnm  |
+| git cached           | gch   |
 | git checkout         | gck   |
 | git checkout develop | gckd  |
 | git checkout master  | gckm  |
+| git commit           | gci   |
+| git commit -m        | gcim  |
+| git lg               | glg   |
+| git diff             | gdi   |
+| git push             | gpu   |
+| git status           | gst   |
 
 _For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` file_
 
@@ -200,14 +199,14 @@ _For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` fi
 | git flow feature start    | gffs  |
 | git flow feature publish  | gffp  |
 | git flow feature finish   | gfff  |
-| git flow release          | gfr   |
-| git flow release start    | gfrs  |
-| git flow release publish  | gfrp  |
-| git flow release finish   | gfrf  |
 | git flow hotfix           | gfh   |
 | git flow hotfix start     | gfhs  |
 | git flow hotfix publish   | gfhp  |
 | git flow hotfix finish    | gfhf  |
+| git flow release          | gfr   |
+| git flow release start    | gfrs  |
+| git flow release publish  | gfrp  |
+| git flow release finish   | gfrf  |
 
 #### Miscellaneous
 
