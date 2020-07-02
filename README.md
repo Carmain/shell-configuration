@@ -180,6 +180,9 @@ _Start the command with `git` or `g` (example : `git st`)_
 | git diff             | gdi   |
 | git push             | gpu   |
 | git status           | gst   |
+| git rebase           | grb   |
+| git rebase -i        | grbi  |
+| git rebase master    | grbm  |
 
 _For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` file_
 
