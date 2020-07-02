@@ -13,6 +13,37 @@ antigen bundle zsh-users/zsh-completions          # Extra zsh completions
 antigen theme avit  # Load the theme
 antigen apply  # Tell antigen that you're done
 
+# Very specific case for a very specific need
+in_debian_chroot() {
+    if [ -f /etc/debian_chroot ]
+    then 
+        echo "%{$fg_bold[yellow]%}#$(cat /etc/debian_chroot)#%{$reset_color%} "
+    else 
+        echo ""
+    fi
+}
+
+typeset +H _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%} "
+
+PROMPT='
+${_current_dir}$(git_prompt_info) $(git_prompt_status)
+$(in_debian_chroot)%(?:%{$fg_bold[white]%}➜ :%{$fg_bold[red]%}➜ %{$reset_color%} '
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[green]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY=""
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ✓%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}✚ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[yellow]%}⚑ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[yellow]%}» %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[white]%}§ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[white]%}◒ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_STASHED="%{$fg_bold[yellow]%}$ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[blue]%}< %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[blue]%}> %{$reset_color%}"
+
+
 color_param="-G"  # OSX and FreeBSD param for --color=auto
 if [[ "$(uname)" == "Linux" ]]; then
   color_param="--color=auto"

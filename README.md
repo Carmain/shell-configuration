@@ -32,24 +32,22 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 
 ### The theme
 
-The project use the `avit` theme already included in oh-my-zsh because of the purity of the prompt & the nice signaletic for git.
-
-- The prompt (▶) is grey by default and pass to red with elevated (root) privileges
-- A symbol is shown if the last command failed (⍉)
-- A compact view of the working directory wich show only the 3 last levels
+The project a custom theme defined in the .zshrc.
 
 ### Meaning of the symbols displayed inside a git repositiory
 
 | Symbol | Meaning                       |
 | ------ | ----------------------------- |
-| ✔      | Repository clean              |
-| ✗      | Dirty working repository      |
-| ✚      | Changes ready to be committed |
-| ⚑      | File(s) tracked modified      |
-| ✖      | File(s) tracked deleted       |
-| ▴      | File(s) Renamed               |
-| §      | Branch unmerged               |
-| ◒      | File(s) untracked             |
+| `✔`    | Repository clean              |
+| `✚`    | Changes ready to be committed |
+| `⚑`    | Tracked file(s) modified      |
+| `✖`    | Tracked file(s) deleted       |
+| `»`    | Tracked file(s) renamed       |
+| `§`    | Branch unmerged               |
+| `◒`    | File(s) untracked             |
+| `$`    | Content stashed               |
+| `<`    | Branch behind upstream        |
+| `>`    | Branch ahead upstream         |
 
 ### Bundles from the default repo (robbyrussell's oh-my-zsh)
 
