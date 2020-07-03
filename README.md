@@ -161,28 +161,28 @@ _Start the command with `git` or `g` (example : `git st`)_
 - All the aliases start with `g`
 - The aliases have at least **three** letters and maximum **four**
 
-| Git original command | Alias |
-| -------------------- | ----- |
-| git                  | g     |
-| git add              | gad   |
-| git add .            | gall  |
-| git amend            | gcam  |
-| git bnm              | gbnm  |
-| git br               | gbr   |
-| git brm              | gbrm  |
-| git cached           | gch   |
-| git checkout         | gck   |
-| git checkout develop | gckd  |
-| git checkout master  | gckm  |
-| git commit           | gci   |
-| git commit -m        | gcim  |
-| git lg               | glg   |
-| git diff             | gdi   |
-| git push             | gpu   |
-| git status           | gst   |
-| git rebase           | grb   |
-| git rebase -i        | grbi  |
-| git rebase master    | grbm  |
+| Git original command | Alias  |
+| -------------------- | ------ |
+| git                  | `g`    |
+| git add              | `gad`  |
+| git add .            | `gall` |
+| git amend            | `gcam` |
+| git bnm              | `gbnm` |
+| git br               | `gbr`  |
+| git brm              | `gbrm` |
+| git cached           | `gch`  |
+| git checkout         | `gck`  |
+| git checkout develop | `gckd` |
+| git checkout master  | `gckm` |
+| git commit           | `gci`  |
+| git commit -m        | `gcim` |
+| git lg               | `glg`  |
+| git diff             | `gdi`  |
+| git push             | `gpu`  |
+| git status           | `gst`  |
+| git rebase           | `grb`  |
+| git rebase -i        | `grbi` |
+| git rebase master    | `grbm` |
 
 _For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` file_
 
@@ -193,38 +193,38 @@ _For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` fi
 - All the aliases start with `gf`
 - The aliases always have **one** letter by word (the first of each words)
 
-| Git flow original command | Alias |
-| ------------------------- | ----- |
-| git flow                  | gf    |
-| git flow feature          | gff   |
-| git flow feature start    | gffs  |
-| git flow feature publish  | gffp  |
-| git flow feature finish   | gfff  |
-| git flow hotfix           | gfh   |
-| git flow hotfix start     | gfhs  |
-| git flow hotfix publish   | gfhp  |
-| git flow hotfix finish    | gfhf  |
-| git flow release          | gfr   |
-| git flow release start    | gfrs  |
-| git flow release publish  | gfrp  |
-| git flow release finish   | gfrf  |
+| Git flow original command | Alias  |
+| ------------------------- | ------ |
+| git flow                  | `gf`   |
+| git flow feature          | `gff`  |
+| git flow feature start    | `gffs` |
+| git flow feature publish  | `gffp` |
+| git flow feature finish   | `gfff` |
+| git flow hotfix           | `gfh`  |
+| git flow hotfix start     | `gfhs` |
+| git flow hotfix publish   | `gfhp` |
+| git flow hotfix finish    | `gfhf` |
+| git flow release          | `gfr`  |
+| git flow release start    | `gfrs` |
+| git flow release publish  | `gfrp` |
+| git flow release finish   | `gfrf` |
 
 #### Miscellaneous
 
-| Original command       | Alias |
-| ---------------------- | ----- |
-| cd ../                 | ..    |
-| cd ../../              | ...   |
-| cd ../../../           | ....  |
-| ls --color=auto        | ls    |
-| ls -l --color=auto     | ll    |
-| ls -ahl --color=auto   | lahl  |
-| ls -d .\* --color=auto | l.    |
-| grep --color=auto      | grep  |
-| egrep --color=auto     | egrep |
-| fgrep --color=auto     | fgrep |
-| history                | h     |
-| python                 | py    |
-| pip                    | pi    |
-| python3                | py3   |
-| pip3                   | pi3   |
+| Original command       | Alias   |
+| ---------------------- | ------- |
+| cd ../                 | `..`    |
+| cd ../../              | `...`   |
+| cd ../../../           | `....`  |
+| ls --color=auto        | `ls`    |
+| ls -l --color=auto     | `ll`    |
+| ls -ahl --color=auto   | `lahl`  |
+| ls -d .\* --color=auto | `l.`    |
+| grep --color=auto      | `grep`  |
+| egrep --color=auto     | `egrep` |
+| fgrep --color=auto     | `fgrep` |
+| history                | `h`     |
+| python                 | `py`    |
+| pip                    | `pi`    |
+| python3                | `py3`   |
+| pip3                   | `pi3`   |
