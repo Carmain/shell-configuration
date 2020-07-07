@@ -30,11 +30,11 @@ If nothing changed, try the command `antigen reset` & reload the shell again. If
 
 ## Packages installed for `ZSH`
 
-### The theme
+### Theme
 
-The project a custom theme defined in the .zshrc.
+The project have a nice custom theme defined inside the .zshrc
 
-### Meaning of the symbols displayed inside a git repositiory
+#### Meaning of the symbols in the prompt displayed inside a git repositiory
 
 | Symbol | Meaning                       |
 | ------ | ----------------------------- |
@@ -78,7 +78,7 @@ $ git:(feature/cool-stuffs) # Go back to the last branch visited
 
 #### `sync_with_dev`
 
-This function is used to :
+This function is used to:
 
 - From a `git` branch go back to develop
 - Pull develop
@@ -96,7 +96,7 @@ Already up to date. # Or get all the modifications applied to your local branch 
 
 #### `merge_feature`
 
-This function is used to :
+This function is used to:
 
 - From a branch go back to develop
 - Pull develop
@@ -115,7 +115,7 @@ $ git:(feature/fake-branch) grbx 5
 
 ### git aliases from `.gitconfig`
 
-_Start the command with `git` or `g` (example : `git st`)_
+_Start the command with `git` or `g` (example: `git st`)_
 
 | Shortcut        | Explanation                                          |
 | --------------- | ---------------------------------------------------- |
@@ -146,17 +146,17 @@ _Start the command with `git` or `g` (example : `git st`)_
 | rbi             | `rebase -i`                                          |
 | rbm             | `rebase master`                                      |
 
-**Note :**
+_Note:_
 
-- The command `git impact` can be used like that to show the difference of the unstaged modifications with the last commit or with a branch name as argument to see the difference by files between the current branch and the other. For example : `git impact master`
-- The command `git file-history` must be used with a file as argument. For example : `git file-history home.html`
-- `find-by-message` must be used with a string as argument. For example : `git find-by-message Merge tag`. Be carefull, the command is case-sensitive !
+- The command `git impact` can be used like that to show the difference of the unstaged modifications with the last commit or with a branch name as argument to see the difference by files between the current branch and the other. For example: `git impact master`
+- The command `git file-history` must be used with a file as argument. For example: `git file-history home.html`
+- `find-by-message` must be used with a string as argument. For example: `git find-by-message Merge tag`. Be carefull, the command is case-sensitive !
 
 ### Aliases included in `.zshrc`
 
 #### git
 
-**Rules :**
+_Rules:_
 
 - All the aliases start with `g`
 - The aliases have at least **three** letters and maximum **four**
@@ -188,7 +188,7 @@ _For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` fi
 
 #### git flow
 
-**Rules :**
+_Rules:_
 
 - All the aliases start with `gf`
 - The aliases always have **one** letter by word (the first of each words)

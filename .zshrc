@@ -117,7 +117,7 @@ gckl() {
   git checkout $last_branch_visited
 }
 
-# This function is used to :
+# This function is used to:
 #  - From a branch go back to develop
 #  - Pull develop
 #  - Return into the last branch visited
@@ -129,7 +129,7 @@ sync_with_dev() {
   git merge develop
 }
 
-# This function is used to :
+# This function is used to:
 #  - From a branch go back to develop
 #  - Pull develop
 #  - Return into the last branch visited
@@ -146,7 +146,7 @@ merge_feature() {
 # Shortcut for `git rebase -i HEAD~<X>` where `<X>` is passed as argument
 grbx() {
   if [ $# -eq 0 ]; then
-    echo "Error : missing number of commit you want to rebase"
+    echo "Error: missing number of commit you want to rebase"
     exit 1
   fi
   git rebase -i HEAD~$1
