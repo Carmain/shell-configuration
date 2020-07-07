@@ -2,6 +2,8 @@
 
 A simple shell configuration compatible for macOS & Linux.
 
+![Version](https://img.shields.io/static/v1?label=Version&message=1.8.0&color=9ccc65)
+
 ## What's inside
 
 - Usefull aliases for common & git commands described and listed below
