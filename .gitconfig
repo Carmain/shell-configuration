@@ -25,22 +25,27 @@
 [alias]
     a = add
     all = add .
-    out-all = checkout -- .
-    ci = commit
     amend = commit --amend
-    soft-reset = reset HEAD~
-    hard-reset = reset --hard HEAD~
-    d = diff
-    cached = diff --cached
-    impact = diff --stat --color
-    st = status
-    ck = checkout
+    bnm = branch --no-merged
     br = branch
     brm = branch -D
-    bnm = branch --no-merged
+    cached = diff --cached
+    ci = commit
+    ck = checkout
+    ckb = checkout -b
+    d = diff
+    file-history = log -p -M --follow --stat --
+    find-by-message = "!f() { git log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --grep=$1; }; f"
+    hard-reset = reset --hard HEAD~
+    impact = diff --stat --color
     lg = log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     lgd = log -p
-    file-history = log -p -M --follow --stat --
-    tree = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all
-    find-by-message = "!f() { git log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --grep=$1; }; f"
+    out-all = checkout -- .
+    soft-reset = reset HEAD~
+    st = status
     tag-date = for-each-ref --sort=-taggerdate --count=10 --format '%(tag) -- %(taggerdate:short)' refs/tags
+    tree = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all
+    puf = push --force-with-lease
+    rb = rebase
+    rbi = rebase -i
+    rbm = rebase master

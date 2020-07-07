@@ -47,11 +47,11 @@ set expandtab  " Htting tab in insert mode will procude the appropriate number o
 set tabstop=4  " Tell vim how many columns a tab counts for
 set shiftwidth=4  " Control how many columns text is indented with the reindent operations
 
-set showmatch       " Montre le/la crochet/parenthèse/croche correspondante
-set matchtime=2     " pendant 2 dixièmes de secondes
+set showmatch  " Show the corresponding hook / parenthesis...
+set matchtime=2  " ...for 2 tenths of a second
 set matchpairs=(:),[:],{:},<:>
 
-" give us nice EOL (end of line) characters
+" Give us nice EOL (end of line) characters
 set list
 set listchars=tab:▸\ ,eol:¬
 
@@ -77,7 +77,7 @@ filetype plugin indent on
 
 " ---------- Themes configuration ----------
 
-function Solarized(background)
+function _solarized(background)
     colorscheme solarized
     let g:solarized_termcolors=256
     let g:solarized_contrast="high"
@@ -101,10 +101,10 @@ if colors == "hybrid"
     set background=dark
 
 elseif colors == "solarized-dark"
-    call Solarized("dark")
+    call _solarized("dark")
 
 elseif colors == "solarized-light"
-    call Solarized("light")
+    call _solarized("light")
 
 elseif colors == "monokai"
     colorscheme monokai
