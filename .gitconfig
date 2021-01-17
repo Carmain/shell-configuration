@@ -33,6 +33,7 @@
     ci = commit
     ck = checkout
     ckb = checkout -b
+    cp = cherry-pick
     d = diff
     file-history = log -p -M --follow --stat --
     find-by-message = "!f() { git log --pretty=format:'* %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --grep=$1; }; f"
@@ -47,5 +48,7 @@
     tree = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph --all
     puf = push --force-with-lease
     rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
     rbi = rebase -i
     rbm = rebase master

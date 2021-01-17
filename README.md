@@ -131,6 +131,7 @@ _Start the command with `git` or `g` (example: `git st`)_
 | ci              | `commit`                                             |
 | ck              | `checkout`                                           |
 | ckb             | `checkout -b`                                        |
+| cp              | `cherry-pick`                                        |
 | d               | `diff`                                               |
 | file-history    | Display the history of the file (see the note below) |
 | find-by-message | Filter the commits by message (see the note below)   |
@@ -145,6 +146,8 @@ _Start the command with `git` or `g` (example: `git st`)_
 | tree            | A tree view of the git                               |
 | puf             | `push --force-with-lease`                            |
 | rb              | `rebase`                                             |
+| rba             | `rebase --abort`                                     |
+| rbc             | `rebase --continue`                                  |
 | rbi             | `rebase -i`                                          |
 | rbm             | `rebase master`                                      |
 
@@ -174,6 +177,7 @@ _Rules:_
 | git brm              | `gbrm` |
 | git cached           | `gch`  |
 | git checkout         | `gck`  |
+| git cherry-pick      | `gcp`  |
 | git checkout develop | `gckd` |
 | git checkout master  | `gckm` |
 | git commit           | `gci`  |
@@ -185,6 +189,8 @@ _Rules:_
 | git rebase           | `grb`  |
 | git rebase -i        | `grbi` |
 | git rebase master    | `grbm` |
+| git rebase --continue | `grc` |
+| git rebase --abort | `gra` |
 
 _For some aliases like `brn` or `bnm`, see the section about the `.gitconfig` file_
 
